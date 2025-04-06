@@ -188,7 +188,6 @@ Cross-dataset evaluations using the **frame-level ROC-AUC** metric. All detector
 | Frequency | EFNB4 + LSDA     | EfficientNet  | <u>0.786</u> | <u>0.760</u> | <u>0.774</u> | <u>0.738</u> | <u>0.728</u> | <u>0.757</u> |
 | **SVD (Ours)** | U-Net VAE   | U-Net VAE     | **0.829** <span style="color:blue;">(+0.043)</span> | **0.838** <span style="color:blue;">(+0.078)</span> | **0.815** <span style="color:blue;">(+0.041)</span> | **0.782** <span style="color:blue;">(+0.044)</span> | **0.800** <span style="color:blue;">(+0.072)</span> | **0.813** <span style="color:blue;">(+0.056)</span> |
 
-> Best results are in **bold**, second-best are <u>underlined</u>, and improvements over second-best methods are shown in <span style="color:blue;">blue</span>.
 
 
 
@@ -196,11 +195,48 @@ Cross-dataset evaluations using the **frame-level ROC-AUC** metric. All detector
 
 
 ### 🧪 Cross-Manipulation Evaluation (4 types)
-_Performance across four different deepfake manipulation techniques._
+#### Trained on DF
 
-<!-- Details to be added -->
+| **Method**               | **DF** | **F2F** | **FS**  | **NT**  |
+|--------------------------|--------|--------|--------|--------|
+| Face X-ray + BI          | 0.9917 | 0.9857 | 0.9821 | 0.9813 |
+| PCL + I2G                | 1.0000 | 0.9897 | 0.9986 | 0.9765 |
+| EFNB4 + SBIs             | 0.9999 | 0.9988 | 0.9991 | 0.9879 |
+| **Ours**                 | 0.9975 | 0.9798 | 0.9934 | 0.9852 |
 
 ---
+
+#### Trained on F2F
+
+| **Method**               | **F2F** | **DF**  | **FS**  | **NT**  |
+|--------------------------|--------|--------|--------|--------|
+| Face X-ray + BI          | 0.9883 | 0.9812 | 0.9794 | 0.9756 |
+| PCL + I2G                | 0.9937 | 0.9821 | 0.9879 | 0.9713 |
+| EFNB4 + SBIs             | 0.9989 | 0.9956 | 0.9964 | 0.9815 |
+| **Ours**                 | 0.9796 | 0.9754 | 0.9882 | 0.9767 |
+
+---
+
+#### Trained on FS
+
+| **Method**               | **FS**  | **DF**  | **F2F** | **NT**  |
+|--------------------------|--------|--------|--------|--------|
+| Face X-ray + BI          | 0.9875 | 0.9806 | 0.9778 | 0.9701 |
+| PCL + I2G                | 0.9961 | 0.9865 | 0.9893 | 0.9692 |
+| EFNB4 + SBIs             | 0.9978 | 0.9924 | 0.9947 | 0.9785 |
+| **Ours**                 | 0.9892 | 0.9789 | 0.9826 | 0.9743 |
+
+---
+
+#### Trained on NT
+
+| **Method**               | **NT**  | **DF**  | **F2F** | **FS**  |
+|--------------------------|--------|--------|--------|--------|
+| Face X-ray + BI          | 0.9822 | 0.9769 | 0.9745 | 0.9753 |
+| PCL + I2G                | 0.9896 | 0.9801 | 0.9824 | 0.9819 |
+| EFNB4 + SBIs             | 0.9963 | 0.9917 | 0.9925 | 0.9904 |
+| **Ours**                 | 0.9855 | 0.9736 | 0.9802 | 0.9811 |
+
 
 ### 📈 Visualization of Reconstruction Loss (6 examples)
 _Comparison of reconstruction loss between real and fake frames/images._

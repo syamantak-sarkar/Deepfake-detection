@@ -49,13 +49,13 @@ The proposed pipeline consists of the following components:
 
 ### 4. Anomaly Detection via Reconstruction Loss
 - For an unseen image $\mathbf{I}^{\text{input}}$, compute reconstruction error:
-  $$
+  $
   \mathcal{L}_{\text{recon}} = \frac{1}{mn} \sum_{i=1}^{m} \sum_{j=1}^{n} \left( \mathbf{I}^{\text{input}}_{i,j} - \hat{\mathbf{I}}_{{i,j}} \right)^2
-  $$
+  $
 - Determine threshold $\tau^*$ from a validation set using **Youden’s Index**:
-  $$
+  $
   \tau^* = \arg\max_{\tau} \left[ \int_{\tau}^{\infty} p_f(x) dx + \int_{-\infty}^{\tau} p_r(x) dx - 1 \right]
-  $$
+  $
 - Classify as:
   - **Real** if $\mathcal{L}_{\text{recon}} \leq \tau^*$
   - **Fake** if $\mathcal{L}_{\text{recon}} > \tau^*$

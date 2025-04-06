@@ -1,5 +1,5 @@
 
-# 🧠 Unsupervised and Generalizable Deepfake Detection Using Singular Value Decomposition
+#  Unsupervised and Generalizable Deepfake Detection Using Singular Value Decomposition
 
 ![Process Diagram](deepfake_detection_process.png) <!-- Replace with your actual image path -->
 

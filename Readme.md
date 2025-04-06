@@ -42,11 +42,31 @@ _See the diagram above for a visual summary._
 ## 📊 Experiments & Evaluation
 
 ### 📂 Cross-Dataset Evaluation (6 datasets)
-_Results, accuracy, and generalization performance across six deepfake datasets._
 
-<!-- Details to be added -->
+✅ Model Trained on FF++-c23
+Method	Detector	Backbone	CDF-v1	CDF-v2	DFD	DFDC	DFDCP	Avg.
+Naive	Meso4	MesoNet	0.736	0.609	0.548	0.556	0.599	0.610
+Naive	MesoIncep	MesoNet	0.737	0.697	0.623	0.576	0.684	0.663
+Naive	CNN-Aug	ResNet	0.742	0.703	0.646	0.636	0.617	0.669
+Naive	Xception	Xception	0.791	0.739	0.816	0.680	0.737	0.753
+Naive	EfficientB4	EfficientNet	0.791	0.749	0.815	0.696	0.728	0.756
+Spatial	CapsuleNet	Capsule	0.791	0.747	0.684	0.647	0.657	0.705
+Spatial	FWA	Xception	0.719	0.710	0.667	0.638	0.690	0.685
+Spatial	Face X-ray	HRNet	0.709	0.679	0.766	0.633	0.694	0.696
+Spatial	FFD	Xception	0.780	0.748	0.780	0.734	0.753	0.759
+Spatial	CORE	Xception	0.780	0.743	0.802	0.743	0.753	0.754
+Spatial	Recce	Custom	0.768	-	0.812	0.713	0.734	0.752
+Spatial	UCF	Xception	0.779	-	0.810	0.759	0.763	0.778
+Frequency	F3Net	Xception	0.777	0.735	0.798	0.702	0.735	0.749
+Frequency	SPSL	Xception	0.815	0.726	0.804	0.741	0.761	0.769
+Frequency	SRM	Xception	0.793	0.755	0.812	0.704	0.741	0.760
+Frequency	EFNB4 + LSDA	EfficientNet	0.867	0.830	0.880	0.736	0.815	0.826
+SVD (Ours)	U-Net VAE	U-Net VAE	0.892 (+0.025)	0.876 (+0.046)	0.890 (+0.010)	0.834 (+0.098)	0.903 (+0.088)	0.881 (+0.055)
 
----
+give 
+#### ✅ Model Trained on CDF-v1
+
+<!-- Paste next table -->
 
 ### 🧪 Cross-Manipulation Evaluation (4 types)
 _Performance across four different deepfake manipulation techniques._

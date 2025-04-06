@@ -1,15 +1,3 @@
-# 🧠 Unsupervised and Generalizable Deepfake Detection Using Singular Value Decomposition
-![Process Diagram](deepfake_detection_process.png)
-
-
-
-## 🔍 Overview
-
-This project introduces an **unsupervised deepfake detection** pipeline based on **Singular Value Decomposition (SVD)**, aiming to identify deepfakes without relying on labeled training data. The method is designed to be **generalizable across datasets**, formats, and manipulation techniques.
-
-The approach leverages the **spectral properties of image representations** to distinguish real from fake media, making it lightweight, interpretable, and adaptable.
-
----
 
 # 🧠 Unsupervised and Generalizable Deepfake Detection Using Singular Value Decomposition
 

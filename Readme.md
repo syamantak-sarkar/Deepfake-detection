@@ -92,7 +92,32 @@ Cross-dataset evaluations using the **frame-level ROC-AUC** metric. All detector
 | Frequency | EFNB4 + LSDA     | EfficientNet  | <u>0.857</u> | <u>0.838</u> | <u>0.882</u> | <u>0.744</u> | <u>0.818</u> | <u>0.827</u> |
 | **SVD (Ours)** | U-Net VAE   | U-Net VAE     | **0.881** <span style="color:blue;">(+0.024)</span> | **0.896** <span style="color:blue;">(+0.058)</span> | **0.899** <span style="color:blue;">(+0.017)</span> | **0.839** <span style="color:blue;">(+0.095)</span> | **0.910** <span style="color:blue;">(+0.092)</span> | **0.885** <span style="color:blue;">(+0.058)</span> |
 
-> Best results are in **bold**, second-best are <u>underlined</u>, and the improvements in ROC-AUC are shown in <span style="color:blue;">blue</span>.
+### ✅ Model Trained on **CDF-v1**
+
+Cross-dataset evaluations using the **frame-level ROC-AUC** metric. All detectors are trained on **CDF-v1** and evaluated on other datasets.
+
+| Method    | Detector         | Backbone      | CDF-v2       | FF++         | DFD          | DFDC         | DFDCP        | Avg.         |
+|-----------|------------------|---------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Naive     | Meso4            | MesoNet       | 0.715        | 0.662        | 0.569        | 0.535        | 0.598        | 0.616        |
+| Naive     | MesoIncep        | MesoNet       | 0.731        | 0.688        | 0.613        | 0.550        | 0.670        | 0.650        |
+| Naive     | CNN-Aug          | ResNet        | 0.740        | 0.702        | 0.628        | 0.620        | 0.605        | 0.659        |
+| Naive     | Xception         | Xception      | 0.781        | 0.740        | 0.795        | 0.675        | 0.729        | 0.744        |
+| Naive     | EfficientB4      | EfficientNet  | 0.783        | 0.752        | 0.801        | 0.699        | 0.715        | 0.750        |
+| Spatial   | CapsuleNet       | Capsule       | 0.769        | 0.742        | 0.678        | 0.642        | 0.648        | 0.696        |
+| Spatial   | FWA              | Xception      | 0.722        | 0.705        | 0.661        | 0.625        | 0.684        | 0.679        |
+| Spatial   | Face X-ray       | HRNet         | 0.709        | 0.668        | 0.762        | 0.626        | 0.690        | 0.691        |
+| Spatial   | FFD              | Xception      | 0.765        | 0.746        | 0.775        | 0.725        | 0.745        | 0.751        |
+| Spatial   | CORE             | Xception      | 0.769        | 0.738        | 0.790        | 0.735        | 0.748        | 0.756        |
+| Spatial   | Recce            | Custom        | 0.750        | -            | 0.806        | 0.704        | 0.729        | 0.747        |
+| Spatial   | UCF              | Xception      | 0.765        | -            | 0.804        | 0.754        | 0.749        | 0.768        |
+| Frequency | F3Net            | Xception      | 0.751        | 0.736        | 0.795        | 0.700        | 0.720        | 0.740        |
+| Frequency | SPSL             | Xception      | 0.789        | 0.727        | 0.798        | 0.742        | 0.760        | 0.763        |
+| Frequency | SRM              | Xception      | 0.774        | 0.756        | 0.809        | 0.705        | 0.735        | 0.756        |
+| Frequency | EFNB4 + LSDA     | EfficientNet  | <u>0.842</u> | <u>0.825</u> | <u>0.875</u> | <u>0.738</u> | <u>0.805</u> | <u>0.817</u> |
+| **SVD (Ours)** | U-Net VAE   | U-Net VAE     | **0.869** <span style="color:blue;">(+0.027)</span> | **0.881** <span style="color:blue;">(+0.056)</span> | **0.894** <span style="color:blue;">(+0.019)</span> | **0.828** <span style="color:blue;">(+0.090)</span> | **0.899** <span style="color:blue;">(+0.094)</span> | **0.874** <span style="color:blue;">(+0.057)</span> |
+
+
+
 
 
 ### 🧪 Cross-Manipulation Evaluation (4 types)

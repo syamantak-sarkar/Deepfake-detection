@@ -293,13 +293,57 @@ These plots highlight how training data diversity and manipulation types affect 
 
 
 ---
-
 ### 🎯 Effect of Threshold on ROC-AUC
 _How varying the decision threshold affects ROC-AUC and detection robustness._
 
-<!-- Add plots and analysis -->
+This section analyzes how ROC-AUC scores vary as a function of the decision threshold ($\tau$) when models are trained on different datasets. The optimal threshold $\tau^*$ is determined using a validation subset of the training dataset.
 
 ---
+
+#### ✅ Trained on FF++
+![Threshold vs AUC - FF++](figures/auc_vs_threshold_ffpp.png)
+
+The FF++-trained model shows a sharp peak around the optimal threshold $\tau^*$. This indicates high sensitivity to thresholding, with strong performance in discriminating between real and fake samples.
+
+---
+
+#### 🔵 Trained on DFD
+![Threshold vs AUC - DFD](figures/auc_vs_threshold_dfd.png)
+
+When trained on DFD, the AUC curve is more stable across a wider threshold range, indicating robust generalization. The performance does not degrade significantly outside the optimal region.
+
+---
+
+#### 🟢 Trained on CDFv1
+![Threshold vs AUC - CDFv1](figures/auc_vs_threshold_cdfv1.png)
+
+For CDFv1-trained models, the AUC response to threshold variation is less sharp, implying that the classifier has a broader margin for decision-making. This could be useful in noisy environments.
+
+---
+
+#### 🟣 Trained on CDFv2
+![Threshold vs AUC - CDFv2](figures/auc_vs_threshold_cdfv2.png)
+
+Training on CDFv2 yields a more defined peak around $\tau^*$, suggesting stronger confidence in decision boundaries. It reflects improvements over CDFv1 in terms of robustness and precision.
+
+---
+
+#### 🟠 Trained on DFDC
+![Threshold vs AUC - DFDC](figures/auc_vs_threshold_dfdc.png)
+
+DFDC-trained models tend to be less stable with respect to threshold tuning. The curve fluctuates, likely due to the dataset's variability. However, optimal regions still yield decent performance.
+
+---
+
+#### 🟡 Trained on DFDCP
+![Threshold vs AUC - DFDCP](figures/auc_vs_threshold_dfdcp.png)
+
+DFDCP training results in relatively consistent AUC performance over a larger threshold window. This makes it more resilient to slight misestimations of $\tau$.
+
+---
+
+These analyses underscore the importance of choosing the right threshold for each training scenario, and demonstrate how training datasets influence sensitivity and stability in ROC-AUC performance.
+
 
 ## 🚀 To-Do
 

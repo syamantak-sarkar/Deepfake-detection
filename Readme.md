@@ -41,10 +41,11 @@ $$
 \frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90
 $$
 
+---
 
 ### 3. Image Reconstruction via U-Net VAE
 
-- Feed $\mathbf{I}_{\text{low}}$ to a trained **U-Net Variational Autoencoder** to generate reconstructed image $\hat{\mathbf{I}}$.
+- Feed $\mathbf{I}_{\text{low}}$ to a trained **U-Net Variational Autoencoder** to generate the reconstructed image $\hat{\mathbf{I}}$.
 - The U-Net VAE is trained only on **real images** to learn their distribution using the following loss:
 
 $$
@@ -52,9 +53,9 @@ $$
 $$
 
 Where:
-- $\mathcal{L}_{\text{MSE}}$: Pixel-wise reconstruction error.  
-- $\mathcal{L}_{\text{KL}}$: KL divergence for latent regularization.  
-- $\mathcal{L}_{\text{L1}}$: Encourages sparsity and generalization.
+- $\mathcal{L}_{\text{MSE}}$: Pixel-wise reconstruction error  
+- $\mathcal{L}_{\text{KL}}$: KL divergence for latent regularization  
+- $\mathcal{L}_{\text{L1}}$: Encourages sparsity and generalization
 
 ---
 

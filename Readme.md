@@ -67,7 +67,6 @@ Cross-dataset evaluations using the **frame-level ROC-AUC** metric. All detector
 | Frequency | EFNB4 + LSDA     | EfficientNet  | <u>0.867</u> | <u>0.830</u> | <u>0.880</u> | <u>0.736</u> | <u>0.815</u> | <u>0.826</u> |
 | **SVD (Ours)** | U-Net VAE   | U-Net VAE     | <b>0.892</b> <span style="color:blue;">(+0.025)</span> | <b>0.876</b> <span style="color:blue;">(+0.046)</span> | <b>0.890</b> <span style="color:blue;">(+0.010)</span> | <b>0.834</b> <span style="color:blue;">(+0.098)</span> | <b>0.903</b> <span style="color:blue;">(+0.088)</span> | <b>0.881</b> <span style="color:blue;">(+0.055)</span> |
 
-> Best results are in **bold**, second-best are <u>underlined</u>, and the improvements in ROC-AUC are shown in <span style="color:blue;">blue</span>.
 
 #### ✅ Model Trained on CDF-v1
 

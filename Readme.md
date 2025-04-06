@@ -238,10 +238,59 @@ Cross-dataset evaluations using the **frame-level ROC-AUC** metric. All detector
 | **Ours**                 | 0.9855 | 0.9736 | 0.9802 | 0.9811 |
 
 
-### 📈 Visualization of Reconstruction Loss (6 examples)
-_Comparison of reconstruction loss between real and fake frames/images._
 
-<!-- Visualizations and explanations go here -->
+### 🔍 Reconstruction Loss Visualization Across Training Datasets
+
+This section presents the reconstruction loss ($\mathcal{L}_{\text{recon}}$) distribution of real and fake samples. The model is trained on different datasets, and evaluated across test datasets like FF++, CelebDF, DFD, DFDC. The threshold $\tau^*$ is computed on the validation set of the respective training dataset.
+
+Each plot helps in understanding how well the model trained on a specific dataset generalizes to unseen data.
+
+---
+
+#### ✅ Trained on FF++
+![Reconstruction Loss - FF++](figures/reconloss_ffpp.png)
+
+When trained on **FF++**, the model shows excellent separation between real and fake samples, especially on the FF++ and CelebDF test sets. The threshold $\tau^*$ effectively distinguishes the classes.
+
+---
+
+#### 🔵 Trained on DFD
+![Reconstruction Loss - DFD](figures/reconloss_dfd.png)
+
+The model trained on **DFD** shows clean separation on DFD and FF++, while the margin is narrower on DFDC and DFDCP. Still, the $\tau^*$ threshold maintains good discriminative power.
+
+---
+
+#### 🟢 Trained on CDFv1
+![Reconstruction Loss - CDFv1](figures/reconloss_cdfv1.png)
+
+With **CDFv1** training, the model generalizes fairly well. The loss distribution suggests strong separation on CelebDF and moderate separation on DFD and DFDC.
+
+---
+
+#### 🟣 Trained on CDFv2
+![Reconstruction Loss - CDFv2](figures/reconloss_cdfv2.png)
+
+**CDFv2** training leads to improved generalization compared to CDFv1. The model exhibits more consistent behavior across all test datasets, with reliable use of $\tau^*$ for classification.
+
+---
+
+#### 🟠 Trained on DFDC
+![Reconstruction Loss - DFDC](figures/reconloss_dfdc.png)
+
+Training on **DFDC**, which is diverse and noisy, results in wider reconstruction loss distributions. Despite that, the model retains good real-vs-fake separation and remains robust across datasets.
+
+---
+
+#### 🟡 Trained on DFDCP
+![Reconstruction Loss - DFDCP](figures/reconloss_dfdcp.png)
+
+With training on **DFDCP**, the model shows promising generalization, particularly on DFD and FF++. The separation is distinct, and the learned $\tau^*$ threshold helps in reliable classification across domains.
+
+---
+
+These plots highlight how training data diversity and manipulation types affect generalization in reconstruction-based detection frameworks.
+
 
 ---
 

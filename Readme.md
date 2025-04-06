@@ -28,39 +28,54 @@ The proposed pipeline consists of the following components:
 - Detect and align faces from the input image \(\mathbf{I} \in \mathbb{R}^{m \times n}\).
 
 ### 2. Low-Rank SVD Reconstruction
+
 - Perform Singular Value Decomposition (SVD):
-  $$
-  \mathbf{I} = \mathbf{U} \mathbf{S} \mathbf{V}^T
-  $$
+
+$$
+\mathbf{I} = \mathbf{U} \mathbf{S} \mathbf{V}^T
+$$
+
 - Reconstruct a **low-rank version** $\mathbf{I}_{\text{low}}$ preserving ~90% of the spectral energy:
-  $$
-  \mathbf{I}_{\text{low}} = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^T \quad \text{s.t.} \quad \frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90
-  $$
+
+$$
+\mathbf{I}_{\text{low}} = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^T \quad \text{such that} \quad \frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90
+$$
+
+---
 
 ### 3. Image Reconstruction via U-Net VAE
+
 - Feed $\mathbf{I}_{\text{low}}$ to a trained **U-Net Variational Autoencoder** to generate reconstructed image $\hat{\mathbf{I}}$.
 - The U-Net VAE is trained only on **real images** to learn their distribution using the following loss:
-  $$
-  \mathcal{L}_{\text{total}} = \mathcal{L}_{\text{MSE}} + \beta \mathcal{L}_{\text{KL}} + \lambda \mathcal{L}_{\text{L1}}
-  $$
-  - $\mathcal{L}_{\text{MSE}}$: Pixel-wise reconstruction error.
-  - $\mathcal{L}_{\text{KL}}$: KL divergence for latent regularization.
-  - $\mathcal{L}_{\text{L1}}$: Encourages sparsity and generalization.
+
+$$
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{MSE}} + \beta \mathcal{L}_{\text{KL}} + \lambda \mathcal{L}_{\text{L1}}
+$$
+
+Where:
+- $\mathcal{L}_{\text{MSE}}$: Pixel-wise reconstruction error.  
+- $\mathcal{L}_{\text{KL}}$: KL divergence for latent regularization.  
+- $\mathcal{L}_{\text{L1}}$: Encourages sparsity and generalization.
+
+---
 
 ### 4. Anomaly Detection via Reconstruction Loss
+
 - For an unseen image $\mathbf{I}^{\text{input}}$, compute reconstruction error:
-  $
-  \mathcal{L}_{\text{recon}} = \frac{1}{mn} \sum_{i=1}^{m} \sum_{j=1}^{n} \left( \mathbf{I}^{\text{input}}_{i,j} - \hat{\mathbf{I}}_{{i,j}} \right)^2
-  $
+
+$$
+\mathcal{L}_{\text{recon}} = \frac{1}{mn} \sum_{i=1}^{m} \sum_{j=1}^{n} \left( \mathbf{I}^{\text{input}}_{i,j} - \hat{\mathbf{I}}_{i,j} \right)^2
+$$
+
 - Determine threshold $\tau^*$ from a validation set using **Youden’s Index**:
-  $
-  \tau^* = \arg\max_{\tau} \left[ \int_{\tau}^{\infty} p_f(x) dx + \int_{-\infty}^{\tau} p_r(x) dx - 1 \right]
-  $
+
+$$
+\tau^* = \arg\max_{\tau} \left[ \int_{\tau}^{\infty} p_f(x) \, dx + \int_{-\infty}^{\tau} p_r(x) \, dx - 1 \right]
+$$
+
 - Classify as:
   - **Real** if $\mathcal{L}_{\text{recon}} \leq \tau^*$
   - **Fake** if $\mathcal{L}_{\text{recon}} > \tau^*$
-
-
 
 
 ## 📁 Folder Structure (Coming Soon)

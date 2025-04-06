@@ -27,21 +27,20 @@ The proposed pipeline consists of the following components:
 ### 1. Preprocessing
 - Detect and align faces from the input image \(\mathbf{I} \in \mathbb{R}^{m \times n}\).
 
-### 2. Low-Rank SVD Reconstruction
+### Low-Rank Reconstruction
 
-- Perform Singular Value Decomposition (SVD):
-
-$$
-\mathbf{I} = \mathbf{U} \mathbf{S} \mathbf{V}^T
-$$
-
-- Reconstruct a **low-rank version** $\mathbf{I}_{\text{low}}$ preserving ~90% of the spectral energy:
+Reconstruct a **low-rank version** $\mathbf{I}_{\text{low}}$ that retains approximately 90% of the spectral energy:
 
 $$
-\mathbf{I}_{\text{low}} = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^T \quad \text{such that} \quad \frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90
+\mathbf{I}_{\text{low}} = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^T
 $$
 
----
+Where $k$ is chosen such that:
+
+$$
+\frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90
+$$
+
 
 ### 3. Image Reconstruction via U-Net VAE
 

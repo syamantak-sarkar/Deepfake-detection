@@ -31,9 +31,8 @@ The proposed pipeline consists of the following components:
 
 Reconstruct a **low-rank version** $\mathbf{I}_{\text{low}}$ that retains approximately 90% of the spectral energy:
 
-$
-\mathbf{I}_{\text{low}}$ = $\sum_{i=1}^{k}$ \sigma_i \mathbf{u}_i \mathbf{v}_i^T
-$
+$\mathbf{I}_{\text{low}} = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^T$
+
 
 Where $k$ is chosen such that:
 

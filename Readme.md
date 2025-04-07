@@ -312,24 +312,10 @@ With **CDFv1** training, the model generalizes fairly well. The loss distributio
 
 ---
 
-#### 🟣 Trained on CDFv2
-![Reconstruction Loss - CDFv2](reconloss_cdfv2.png)
-
-**CDFv2** training leads to improved generalization compared to CDFv1. The model exhibits more consistent behavior across all test datasets, with reliable use of $\tau^*$ for classification.
-
----
-
 #### 🟠 Trained on DFDC
 ![Reconstruction Loss - DFDC](reconloss_dfdc.png)
 
 Training on **DFDC**, which is diverse and noisy, results in wider reconstruction loss distributions. Despite that, the model retains good real-vs-fake separation and remains robust across datasets.
-
----
-
-#### 🟡 Trained on DFDCP
-![Reconstruction Loss - DFDCP](reconloss_dfdcp.png)
-
-With training on **DFDCP**, the model shows promising generalization, particularly on DFD and FF++. The separation is distinct, and the learned $\tau^*$ threshold helps in reliable classification across domains.
 
 ---
 

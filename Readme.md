@@ -78,16 +78,10 @@ $$
   - **Fake** if $\mathcal{L}_{\text{recon}} > \tau^*$
 
 
-## 📁 Folder Structure (Coming Soon)
 
-```plaintext
-project-root/
-├── data/
-├── models/
-├── notebooks/
-├── results/
-├── scripts/
-└── README.md
+
+
+
 
 ## 📊 Experiments & Evaluation
 

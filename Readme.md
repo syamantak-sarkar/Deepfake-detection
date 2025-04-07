@@ -299,35 +299,35 @@ When trained on **FF++**, the model shows excellent separation between real and 
 ---
 
 #### 🔵 Trained on DFD
-![Reconstruction Loss - DFD](figures/reconloss_dfd.png)
+![Reconstruction Loss - DFD](reconloss_dfd.png)
 
 The model trained on **DFD** shows clean separation on DFD and FF++, while the margin is narrower on DFDC and DFDCP. Still, the $\tau^*$ threshold maintains good discriminative power.
 
 ---
 
 #### 🟢 Trained on CDFv1
-![Reconstruction Loss - CDFv1](figures/reconloss_cdfv1.png)
+![Reconstruction Loss - CDFv1](reconloss_cdfv1.png)
 
 With **CDFv1** training, the model generalizes fairly well. The loss distribution suggests strong separation on CelebDF and moderate separation on DFD and DFDC.
 
 ---
 
 #### 🟣 Trained on CDFv2
-![Reconstruction Loss - CDFv2](figures/reconloss_cdfv2.png)
+![Reconstruction Loss - CDFv2](reconloss_cdfv2.png)
 
 **CDFv2** training leads to improved generalization compared to CDFv1. The model exhibits more consistent behavior across all test datasets, with reliable use of $\tau^*$ for classification.
 
 ---
 
 #### 🟠 Trained on DFDC
-![Reconstruction Loss - DFDC](figures/reconloss_dfdc.png)
+![Reconstruction Loss - DFDC](reconloss_dfdc.png)
 
 Training on **DFDC**, which is diverse and noisy, results in wider reconstruction loss distributions. Despite that, the model retains good real-vs-fake separation and remains robust across datasets.
 
 ---
 
 #### 🟡 Trained on DFDCP
-![Reconstruction Loss - DFDCP](figures/reconloss_dfdcp.png)
+![Reconstruction Loss - DFDCP](reconloss_dfdcp.png)
 
 With training on **DFDCP**, the model shows promising generalization, particularly on DFD and FF++. The separation is distinct, and the learned $\tau^*$ threshold helps in reliable classification across domains.
 
@@ -345,42 +345,42 @@ This section analyzes how ROC-AUC scores vary as a function of the decision thre
 ---
 
 #### ✅ Trained on FF++
-![Threshold vs AUC - FF++](figures/auc_vs_threshold_ffpp.png)
+![Threshold vs AUC - FF++](auc_vs_threshold_ffpp.png)
 
 The FF++-trained model shows a sharp peak around the optimal threshold $\tau^*$. This indicates high sensitivity to thresholding, with strong performance in discriminating between real and fake samples.
 
 ---
 
 #### 🔵 Trained on DFD
-![Threshold vs AUC - DFD](figures/auc_vs_threshold_dfd.png)
+![Threshold vs AUC - DFD](auc_vs_threshold_dfd.png)
 
 When trained on DFD, the AUC curve is more stable across a wider threshold range, indicating robust generalization. The performance does not degrade significantly outside the optimal region.
 
 ---
 
 #### 🟢 Trained on CDFv1
-![Threshold vs AUC - CDFv1](figures/auc_vs_threshold_cdfv1.png)
+![Threshold vs AUC - CDFv1](auc_vs_threshold_cdfv1.png)
 
 For CDFv1-trained models, the AUC response to threshold variation is less sharp, implying that the classifier has a broader margin for decision-making. This could be useful in noisy environments.
 
 ---
 
 #### 🟣 Trained on CDFv2
-![Threshold vs AUC - CDFv2](figures/auc_vs_threshold_cdfv2.png)
+![Threshold vs AUC - CDFv2](auc_vs_threshold_cdfv2.png)
 
 Training on CDFv2 yields a more defined peak around $\tau^*$, suggesting stronger confidence in decision boundaries. It reflects improvements over CDFv1 in terms of robustness and precision.
 
 ---
 
 #### 🟠 Trained on DFDC
-![Threshold vs AUC - DFDC](figures/auc_vs_threshold_dfdc.png)
+![Threshold vs AUC - DFDC](auc_vs_threshold_dfdc.png)
 
 DFDC-trained models tend to be less stable with respect to threshold tuning. The curve fluctuates, likely due to the dataset's variability. However, optimal regions still yield decent performance.
 
 ---
 
 #### 🟡 Trained on DFDCP
-![Threshold vs AUC - DFDCP](figures/auc_vs_threshold_dfdcp.png)
+![Threshold vs AUC - DFDCP](auc_vs_threshold_dfdcp.png)
 
 DFDCP training results in relatively consistent AUC performance over a larger threshold window. This makes it more resilient to slight misestimations of $\tau$.
 

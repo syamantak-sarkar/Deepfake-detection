@@ -292,7 +292,7 @@ Each plot helps in understanding how well the model trained on a specific datase
 ---
 
 #### ✅ Trained on FF++
-![Reconstruction Loss - FF++](figures/reconloss_ffpp.png)
+![Reconstruction Loss - FF++](reconloss_ffpp.png)
 
 When trained on **FF++**, the model shows excellent separation between real and fake samples, especially on the FF++ and CelebDF test sets. The threshold $\tau^*$ effectively distinguishes the classes.
 

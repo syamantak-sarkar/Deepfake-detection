@@ -375,22 +375,12 @@ DFDCP training results in relatively consistent AUC performance over a larger th
 These analyses underscore the importance of choosing the right threshold for each training scenario, and demonstrate how training datasets influence sensitivity and stability in ROC-AUC performance.
 
 
-## 🚀 To-Do
-
-- [ ] Add dataset preprocessing instructions
-- [ ] Include demo notebook or script
-- [ ] Add trained model weights (if applicable)
-- [ ] Finalize results and visualizations
-
----
-
 ## 🤝 Contributions
 
-Feel free to open an issue or pull request for suggestions, improvements, or collaborations!
 
 ---
 
 ## 📜 License
 
-MIT License
+
 

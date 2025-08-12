@@ -111,11 +111,11 @@ This project implements a **UNet-based Variational Autoencoder (UNet-VAE)** for 
   - Fully modular for different datasets and energy retention settings  
 
 #### Usage
-```bash
-# Train & validate
+
+**Train & validate**
 python deepfake_train.py 
 
-# Test evaluation
+**Test evaluation**
 python deepfake_test.py 
 
 

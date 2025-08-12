@@ -78,7 +78,17 @@ $$
   - **Fake** if $\mathcal{L}_{\text{recon}} > \tau^*$
 
 
+## Implementation
 
+### Requirements
+
+To run this project, you’ll need the following:
+
+- **Python** ≥ 3.8
+- **NumPy** ≥ 1.19
+- **Matplotlib** ≥ 3.3
+- **scikit-learn** ≥ 0.24
+- **Jupyter Notebook** (for running interactive demos)
 
 
 

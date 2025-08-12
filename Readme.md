@@ -110,13 +110,13 @@ This project implements a **UNet-based Variational Autoencoder (UNet-VAE)** for 
   - Computes **accuracy, F1-score, ROC-AUC, classification report, and confusion matrix**  
   - Fully modular for different datasets and energy retention settings  
 
-## Usage
+#### Usage
 ```bash
 # Train & validate
-python train_eval.py 
+python deepfake_train.py 
 
 # Test evaluation
-python train_eval.py 
+python deepfake_test.py 
 
 
 

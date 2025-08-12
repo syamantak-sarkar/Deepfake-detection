@@ -29,7 +29,7 @@ The proposed pipeline consists of the following components:
 
 ### Low-Rank Reconstruction
 
-Reconstruct a **low-rank version** \(\mathbf{I}_{\mathrm{low}}\) that retains approximately 90% of the spectral energy:
+Reconstruct a **low-rank version** $\mathbf{I}_{\mathrm{low}}$ that retains approximately 90% of the spectral energy:
 
 $$
 \mathbf{I}_{\mathrm{low}} \;=\; \sum_{i=1}^{k} \sigma_i\,\mathbf{u}_i\,\mathbf{v}_i^\top

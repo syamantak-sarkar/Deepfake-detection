@@ -25,7 +25,7 @@ This project introduces an **unsupervised deepfake detection** pipeline that lev
 The proposed pipeline consists of the following components:
 
 ### 1. Preprocessing
-- Detect and align faces from the input image $\(\mathbf{I} \in \mathbb{R}^{m \times n}\)$.
+- Detect and align faces from the input image $$\(\mathbf{I} \in \mathbb{R}^{m \times n}\)$$.
 
 ### Low-Rank Reconstruction
 

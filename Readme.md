@@ -29,16 +29,16 @@ The proposed pipeline consists of the following components:
 
 ### Low-Rank Reconstruction
 
-Reconstruct a **low-rank version** $\mathbf{I}_{\text{low}}$ that retains approximately 90% of the spectral energy:
-
-$$\mathbf{I}_{\text{low}} = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^T$$
-
-
-
-Where $k$ is chosen such that:
+Reconstruct a **low-rank version** \(\mathbf{I}_{\mathrm{low}}\) that retains approximately 90% of the spectral energy:
 
 $$
-\frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90
+\mathbf{I}_{\mathrm{low}} \;=\; \sum_{i=1}^{k} \sigma_i\,\mathbf{u}_i\,\mathbf{v}_i^\top
+$$
+
+Where \(k\) is chosen such that:
+
+$$
+\frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \approx 0.90,\qquad r=\min(m,n).
 $$
 
 ---

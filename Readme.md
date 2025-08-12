@@ -90,6 +90,33 @@ To run this project, you’ll need the following:
 - **scikit-learn** ≥ 0.24
 - **Jupyter Notebook** (for running interactive demos)
 
+### UNet-VAE Deepfake Detection Pipeline
+
+This project implements a **UNet-based Variational Autoencoder (UNet-VAE)** for deepfake detection, combined with **low-rank preprocessing** via Singular Value Decomposition (SVD).
+
+#### Features
+- **Custom `ImageDataset` Loader**  
+  - Recursively loads images from a folder structure  
+  - Resizes images to **224×224**  
+  - Applies **low-rank reconstruction** to retain a fixed percentage of spectral energy  
+- **UNet-VAE Architecture**  
+  - Encoder-decoder design with skip connections  
+  - Variational encoding-decoding using the reparameterization trick  
+  - Latent dimension calculated dynamically based on input size  
+- **Validation Stage**  
+  - Calculates reconstruction loss for real vs. fake images  
+  - Uses **ROC curve + Youden’s Index** to determine optimal decision threshold  
+- **Evaluation Stage**  
+  - Computes **accuracy, F1-score, ROC-AUC, classification report, and confusion matrix**  
+  - Fully modular for different datasets and energy retention settings  
+
+## Usage
+```bash
+# Train & validate
+python train_eval.py 
+
+# Test evaluation
+python train_eval.py 
 
 
 

@@ -3,7 +3,12 @@
 
 ![Process Diagram](deepfake_detection_process.png) <!-- Replace with your actual image path -->
 
+⚠️ **Repository Status Update (March 2026)**
 
+The authors are currently reviewing and restructuring the implementation to ensure full reproducibility of the experimental results reported in the paper.  
+The code currently available in this repository corresponds to an earlier experimental version used during development.
+
+A fully verified and documented implementation will be released after this review process is completed.
 ## 🔍 Overview
 
 This project introduces an **unsupervised deepfake detection** pipeline that leverages **Singular Value Decomposition (SVD)** and **image reconstruction loss**. Unlike supervised techniques, our approach is **generalizable**, **interpretable**, and requires **no labeled training data**. It is designed to handle multiple datasets, manipulation schemes, and image perturbations like Gaussian blur and JPEG compression.
